@@ -55,4 +55,15 @@ $("#searchBtn").on("click", function(){
         $("#currentWeather").append(uvIndex);
         })
     })
+
+    //5 day forecast
+    let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=fb1261b0f3ac4a566912fe67708cee92";
+
+    $.ajax({
+        url: forecastURL,
+        method: "GET"
+    }).then(function(fcstResponse){
+        console.log(fcstResponse);
+    })
+
 })
