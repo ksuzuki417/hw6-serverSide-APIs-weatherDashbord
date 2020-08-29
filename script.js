@@ -1,7 +1,8 @@
 
-$("#searchBtn").on("click", function(){
-    let cityName = $("#searchCity").val();
+$("#searchBtn").on("click", function getWeather(){
 
+    //create variables
+    let cityName = $("#searchCity").val();
     var apiKey = "fb1261b0f3ac4a566912fe67708cee92";
 
 
@@ -206,9 +207,26 @@ $("#searchBtn").on("click", function(){
 
     })
 
+    //let searchHistory = JSON.parse(localStorage.getItem("search"));
+
     //convert kelvin to fahrenheit
     function kelvin2F(K) {
         return Math.floor((K - 273.15) *1.8 +32);
     }
 
-})
+    //click event to show search history
+    let numberOfSearch = $("#searchCity").val();
+
+    $("#searchBtn").on("click", function(){
+       for(i = 0; i < numberOfSearch; i++){
+           let history = $("<div>");
+           history.text(response.name);
+           $("#searchHistory").append(history);
+       }    
+       
+        
+        //renderSearchHistory();
+    })
+
+
+});
