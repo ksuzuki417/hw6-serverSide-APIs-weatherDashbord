@@ -2,9 +2,11 @@
 $("#searchBtn").on("click", function(){
     let cityName = $("#searchCity").val();
 
+    var apiKey = "fb1261b0f3ac4a566912fe67708cee92";
+
 
     //current weather URL
-    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=fb1261b0f3ac4a566912fe67708cee92";
+    let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + apiKey;
 
     $.ajax({
         url: queryURL,
@@ -15,18 +17,25 @@ $("#searchBtn").on("click", function(){
         let name = $("<div>");
         name.text(response.name);
         $("#currentWeather").append(name);
+        
         //weather icon
+        let icon = response.weather[0].icon;
+        let iconURL = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+        console.log(iconURL);
         let weatherIcon = $("<div>");
-        weatherIcon.text(response.weather[0].icon);
+        weatherIcon.html("<img src='" + iconURL + "'>");
         $("#currentWeather").append(weatherIcon);
+        
         //temperature
         let temperature = $("<div>");
         temperature.text(response.main.temp);
         $("#currentWeather").append(temperature);
+        
         //humidity
         let humidity = $("<div>");
         humidity.text(response.main.humidity);
         $("#currentWeather").append(humidity);
+        
         //wind speed
         let windSpeed = $("<div>");
         windSpeed.text(response.wind.speed);
@@ -41,7 +50,7 @@ $("#searchBtn").on("click", function(){
         console.log(lonEl);
 
         //UV index URL
-        let uvURL = "https://api.openweathermap.org/data/2.5/uvi/?appid=fb1261b0f3ac4a566912fe67708cee92&lat=" + latEl + "&lon=" + longEl + 
+        let uvURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + latEl + "&lon=" + lonEl;
 
         $.ajax({
             url: uvURL,
@@ -51,13 +60,13 @@ $("#searchBtn").on("click", function(){
 
         //UV index
         let uvIndex = $("<div>");
-        uvIndex.text(uvResponse[0].value);
+        uvIndex.text(uvResponse.value);
         $("#currentWeather").append(uvIndex);
         })
     })
 
     //5 day forecast
-    let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=fb1261b0f3ac4a566912fe67708cee92";
+    let forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
 
     $.ajax({
         url: forecastURL,
