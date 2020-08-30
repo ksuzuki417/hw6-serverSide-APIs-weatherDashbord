@@ -205,7 +205,6 @@ $("#searchBtn").on("click", function getWeather(){
 
 
 
-
     })
 
     //let searchHistory = JSON.parse(localStorage.getItem("search"));
@@ -216,18 +215,17 @@ $("#searchBtn").on("click", function getWeather(){
     }
 
     //click event to show search history
-    let numberOfSearch = $("#searchCity").val();
-
-    $("#searchBtn").on("click", function(){
-       for(i = 0; i < numberOfSearch; i++){
-           let history = $("<div>");
-           history.text(response.name);
-           $("#searchHistory").append(history);
-       }    
+    //let numberOfSearch = $("#searchCity").val();
+    //$("#searchBtn").on("click", function(){
+       //for(i = 0; i < numberOfSearch.length; i++){
+           //let history = $("<div>");
+           //history.text(response.name);
+           //$("searchHistory").prepend(history);
+       //}    
        
         
         //renderSearchHistory();
-    })
+    
 
 
 });
