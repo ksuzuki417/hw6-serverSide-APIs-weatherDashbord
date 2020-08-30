@@ -3,7 +3,7 @@ $("#searchBtn").on("click", function getWeather(){
 
     //create variables
     let cityName = $("#searchCity").val();
-    var apiKey = "fb1261b0f3ac4a566912fe67708cee92";
+    var apiKey = "8292c359bf59342ba6b717fa6d2aa974";
 
 
     //current weather URL
