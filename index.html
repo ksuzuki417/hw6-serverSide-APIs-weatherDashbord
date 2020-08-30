@@ -6,11 +6,11 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" id="title">
         <div class="container">
           <h1 class="display-4">Weather Dashboard</h1>
           <p class="lead"></p>
@@ -21,22 +21,68 @@
         <div class="row">
           <div class="col-sm-4" id="searchNav">
             <div class="form-group">
-                <label for="searchCity">Search</label>
+                <label for="searchCity"><h5>Search Your Destination City</h5></label>
                 <input type="search" class="form-control" id="searchCity">
                 <button type="button" class="btn btn-outline-success" id="searchBtn">Search</button>
               </div>
-            
-            <div class="col-sm-4"id=searchHistory>Search Hisotry</div>
-            
-            
+            </div>
 
-
+          
+          <div class="col-sm-8" id="currentWeather"><h5>Current Weather</h5>
+              <h3 id="cityName"></h3>
+              <p id="todaysDate"></p>
+              <div id="weatherIcon"></div>
+              <p id="temperature"></p>
+              <p id="humidity"></p>
+              <p id="windSpeed"></p>
+              <p id="uvIndex"></p>
 
           </div>
-          <div class="col-sm-8" id="currentWeather"></div>
+          <div class="col-sm-4"id="searchHistory"><h5>Search History</h5></div>
 
-          <div class="col-sm-8" id="fiveDayForecast">5-Day Forecast:</div>
-
+          <div class="card-deck" id="fiveDayFCST"><h5>Five Day Forecast</h5>
+            <div class="card" id="day1">
+                <div class="card-body">
+                    <div id="forecastDate1"></div>
+                    <div id="forecastIcon1"></div>
+                    <div id="forecastTemp1"></div>
+                    <div id="forecastHumidity1"></div>
+                </div>
+            </div>
+            <div class="card" id="day2">
+                <div class="card-body">
+                    <div id="forecastDate2"></div>
+                    <div id="forecastIcon2"></div>
+                    <div id="forecastTemp2"></div>
+                    <div id="forecastHumidity2"></div>
+                </div>
+            </div>
+            <div class="card" id="day3">
+                <div class="card-body">
+                    <div id="forecastDate3"></div>
+                    <div id="forecastIcon3"></div>
+                    <div id="forecastTemp3"></div>
+                    <div id="forecastHumidity3"></div>
+                </div>
+            </div>
+            <div class="card" id="day4">
+                <div class="card-body">
+                    <div id="forecastDate4"></div>
+                    <div id="forecastIcon4"></div>
+                    <div id="forecastTemp4"></div>
+                    <div id="forecastHumidity4"></div>
+                </div>
+            </div>
+            <div class="card" id="day5">
+                <div class="card-body">
+                    <div id="forecastDate5"></div>
+                    <div id="forecastIcon5"></div>
+                    <div id="forecastTemp5"></div>
+                    <div id="forecastHumidity5"></div>
+                </div>
+            </div>
+          </div>
+          
 
         </div>
 
